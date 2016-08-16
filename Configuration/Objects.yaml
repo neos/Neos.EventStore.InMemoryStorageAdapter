@@ -1,0 +1,2 @@
+Flowpack\EventStore\Storage\EventStorageInterface:
+  className: Flowpack\EventStore\InMemoryStorageAdapter\InMemoryEventStorage
