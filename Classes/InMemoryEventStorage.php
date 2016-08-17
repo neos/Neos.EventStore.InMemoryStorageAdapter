@@ -13,7 +13,7 @@ use Flowpack\EventStore\Storage\EventStorageInterface;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
- * EventStore
+ * In Memory event storage, for testing purpose
  */
 class InMemoryEventStorage implements EventStorageInterface
 {
@@ -35,19 +35,19 @@ class InMemoryEventStorage implements EventStorageInterface
     }
 
     /**
-     * @param string $aggregateIdentifier
+     * @param string $identifier
      * @param string $aggregateName
      * @param array $data
      * @param integer $version
      * @throws ConcurrencyException
      */
-    public function commit(string $aggregateIdentifier, string $aggregateName, array $data, int $version)
+    public function commit(string $identifier, string $aggregateName, array $data, int $version)
     {
-        if (isset($this->streamData[$aggregateIdentifier])) {
-            $currentData = $this->streamData[$aggregateIdentifier]->getData();
-            $data = array_merge($currentData, $data);
+        $stream = $this->load($identifier);
+        if ($stream !== null) {
+            $data = array_merge($stream->getData(), $data);
         }
-        $this->streamData[$aggregateIdentifier] = new EventStreamData($aggregateIdentifier, $aggregateName, $data, $version);
+        $this->streamData[$identifier] = new EventStreamData($identifier, $aggregateName, $data, $version);
     }
 
     /**
@@ -56,7 +56,7 @@ class InMemoryEventStorage implements EventStorageInterface
      */
     public function contains(string $identifier): bool
     {
-        return isset($this->streamData[$identifier]);
+        return $this->load($identifier) ? true : false;
     }
 
     /**
@@ -65,8 +65,9 @@ class InMemoryEventStorage implements EventStorageInterface
      */
     public function getCurrentVersion(string $identifier): int
     {
-        if (isset($this->streamData[$identifier])) {
-            return $this->streamData[$identifier]->getVersion();
+        $stream = $this->load($identifier);
+        if ($stream !== null) {
+            return $stream->getVersion();
         }
         return 1;
     }
