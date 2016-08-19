@@ -1,2 +1,3 @@
-Flowpack\EventStore\Storage\EventStorageInterface:
-  className: Flowpack\EventStore\InMemoryStorageAdapter\InMemoryEventStorage
+---
+#Ttree\EventStore\Storage\EventStorageInterface:
+#  className: Ttree\EventStore\InMemoryStorageAdapter\InMemoryEventStorage

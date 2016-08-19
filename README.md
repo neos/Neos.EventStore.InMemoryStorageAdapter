@@ -2,7 +2,7 @@
 
 _This package is currently under development and not fully working, please don't use it in production._
 
-This package provide an EventStore implementation for ```Flowpack.EventStore```.
+This package provide an EventStore implementation for ```Ttree.EventStore```.
 
 
 Acknowledgments

@@ -1,18 +1,18 @@
 {
     "description": "",
     "type": "neos-package",
-    "name": "flowpack/eventstore-inmemorystorageadapter",
+    "name": "ttree/eventstore-inmemorystorageadapter",
     "require": {
-        "flowpack/eventstore": "*"
+        "ttree/eventstore": "*"
     },
     "autoload": {
         "psr-4": {
-            "Flowpack\\EventStore\\InMemoryStorageAdapter\\": "Classes/"
+            "Ttree\\EventStore\\InMemoryStorageAdapter\\": "Classes/"
         }
     },
     "extra": {
         "neos": {
-            "package-key": "Flowpack.EventStore.InMemoryStorageAdapter"
+            "package-key": "Ttree.EventStore.InMemoryStorageAdapter"
         }
     }
 }

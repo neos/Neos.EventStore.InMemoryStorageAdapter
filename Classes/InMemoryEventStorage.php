@@ -1,15 +1,15 @@
 <?php
-namespace Flowpack\EventStore\InMemoryStorageAdapter;
+namespace Ttree\EventStore\InMemoryStorageAdapter;
 
 /*
- * This file is part of the Flowpack.Cqrs package.
+ * This file is part of the Ttree.Cqrs package.
  *
  * (c) Hand crafted with love in each details by medialib.tv
  */
 
-use Flowpack\EventStore\EventStreamData;
-use Flowpack\EventStore\Exception\ConcurrencyException;
-use Flowpack\EventStore\Storage\EventStorageInterface;
+use Ttree\EventStore\EventStreamData;
+use Ttree\EventStore\Exception\ConcurrencyException;
+use Ttree\EventStore\Storage\EventStorageInterface;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
