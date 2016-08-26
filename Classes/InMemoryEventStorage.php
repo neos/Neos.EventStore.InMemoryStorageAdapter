@@ -45,7 +45,10 @@ class InMemoryEventStorage implements EventStorageInterface
     {
         $stream = $this->load($identifier);
         if ($stream !== null) {
-            $data = array_merge($stream->getData(), $data);
+            $iterator = new \MultipleIterator();
+            $iterator->attachIterator(new \ArrayIterator($data));
+            $iterator->attachIterator($stream->getData());
+            $data = (array)$iterator;
         }
         $this->streamData[$identifier] = new EventStreamData($identifier, $aggregateName, $data, $version);
     }
