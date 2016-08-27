@@ -73,6 +73,6 @@ class InMemoryEventStorage implements EventStorageInterface
         if ($stream !== null) {
             return $stream->getVersion();
         }
-        return 1;
+        return 0;
     }
 }
