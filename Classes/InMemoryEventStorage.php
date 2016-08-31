@@ -1,8 +1,8 @@
 <?php
-namespace Ttree\EventStore\InMemoryStorageAdapter;
+namespace Neos\EventStore\InMemoryStorageAdapter;
 
 /*
- * This file is part of the Ttree.EventStore.DatabaseStorageAdapter package.
+ * This file is part of the Neos.EventStore.DatabaseStorageAdapter package.
  *
  * (c) Contributors of the Neos Project - www.neos.io
  *
@@ -11,9 +11,9 @@ namespace Ttree\EventStore\InMemoryStorageAdapter;
  * source code.
  */
 
-use Ttree\EventStore\EventStreamData;
-use Ttree\EventStore\Exception\ConcurrencyException;
-use Ttree\EventStore\Storage\EventStorageInterface;
+use Neos\EventStore\EventStreamData;
+use Neos\EventStore\Exception\ConcurrencyException;
+use Neos\EventStore\Storage\EventStorageInterface;
 
 /**
  * In Memory event storage, for testing purpose

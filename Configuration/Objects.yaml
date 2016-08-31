@@ -1,3 +1,3 @@
 ---
-#Ttree\EventStore\Storage\EventStorageInterface:
-#  className: Ttree\EventStore\InMemoryStorageAdapter\InMemoryEventStorage
+#Neos\EventStore\Storage\EventStorageInterface:
+#  className: Neos\EventStore\InMemoryStorageAdapter\InMemoryEventStorage
