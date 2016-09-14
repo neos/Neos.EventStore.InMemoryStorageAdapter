@@ -38,14 +38,13 @@ class InMemoryEventStorage implements EventStorageInterface
     }
 
     /**
-     * @param string $streamIdentifier
      * @param string $aggregateIdentifier
      * @param string $aggregateName
      * @param array $data
      * @param integer $version
      * @throws ConcurrencyException
      */
-    public function commit(string $streamIdentifier, string $aggregateIdentifier, string $aggregateName, array $data, int $version)
+    public function commit(string $aggregateIdentifier, string $aggregateName, array $data, int $version)
     {
         $stream = $this->load($aggregateIdentifier);
         if ($stream !== null) {
